@@ -15,7 +15,7 @@
   margin-bottom: 20px;
 }
 
-/* Video container styles */
+/* Add styles for video container */
 .video-container {
   display: none; /* Initially hide the video */
   margin-top: 30px;
@@ -23,21 +23,14 @@
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  width: 100%; /* Ensures it takes the full width of its parent */
 }
 
-/* Make the iframe responsive */
 .video-container iframe {
-  width: 100%; /* Make the iframe take full width */
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
 }
-
 
 
 body {
