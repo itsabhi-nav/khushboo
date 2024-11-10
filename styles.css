@@ -1,81 +1,21 @@
-/* Reset styles for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(45deg, #ff4081, #ff80ab, #f9b3d1);
-  background-size: 300% 300%;
-  animation: backgroundShift 15s ease infinite;
-  color: #fff;
-  text-align: center;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Container style */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Animated title style */
-h1.animated-title {
-  font-size: 3rem;
-  color: #ff4081;
-  margin-bottom: 20px;
-  animation: bounceIn 1.5s ease-out;
-}
-
-/* Animated text style */
-.animated-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  animation: fadeInUp 2s ease-out;
-}
-
-/* Birthday image style */
 .birthday-img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  animation: zoomIn 1.5s ease-in-out;
+  width: 100%;               /* Make the image take up the full width of its container */
+  max-width: 500px;          /* Set a maximum width to prevent the image from getting too large */
+  height: auto;              /* Maintain the aspect ratio of the image */
+  border-radius: 10px;       /* Optional: Adds rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for a nice effect */
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-/* Button style */
-button.pulse-btn {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  background-color: #ff4081;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 0.3s;
-  animation: pulse 2s infinite;
-}
-
-button.pulse-btn:hover {
-  background-color: #ff1a6d;
-}
-
-/* Video container styles */
+/* Add styles for video container */
 .video-container {
   display: none; /* Initially hide the video */
   margin-top: 30px;
@@ -83,76 +23,124 @@ button.pulse-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  width: 100%; /* Ensures it takes the full width of its parent */
 }
 
-/* Make the iframe responsive */
 .video-container iframe {
-  width: 100%; /* Make the iframe take full width */
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7e7ce;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ff4081;
+  margin-bottom: 20px;
+}
+
+.message-box {
+  background-color: #fff5f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 64, 129, 0.2);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #ff1a6d;
+}
+
+.balloons {
+  display: none;
+  margin-top: 20px;
+  position: relative;
+  height: 400px;
+}
+
+.balloon {
+  width: 50px;
+  height: 70px;
+  background: radial-gradient(circle at bottom, #ff4081 30%, #ff80ab);
+  border-radius: 50% 50% 45% 45%;
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: -100px;
+  animation: float 7s ease-in infinite;
 }
 
-/* Animation keyframes */
-@keyframes backgroundShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.balloon::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 24px;
+  width: 2px;
+  height: 50px;
+  background-color: #333;
 }
 
-@keyframes bounceIn {
+@keyframes float {
   0% {
-    transform: scale(0);
-  }
-  60% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
+    transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
+  100% {
+    transform: translateY(-500px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
-@keyframes pulse {
+@keyframes float1 {
   0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
   100% {
-    transform: scale(1);
+    transform: translateY(-600px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-700px) rotate(360deg);
+    opacity: 0;
   }
 }
